@@ -1,24 +1,25 @@
 # GrowClip Marketing Site
 
-Static single-page product site for GrowClip. It is intentionally separate from
-`interface/`: this project markets the product and contains no ESP32 API proxy,
-auth flow, firmware build hooks or Nodeflow device runtime.
+Public marketing/demo site for **GrowClip**, a private ESP32-S3 local automation platform.
+
+The firmware, device authentication, API implementation and full Nodeflow runtime remain private. This repository contains the standalone public-facing site, marketing-only LiteGraph demo and public mockups.
+
+**Live site:** https://michalmatu.github.io/growclip/
 
 ## Stack
 
-- SvelteKit 2 with static adapter
+- SvelteKit 2 + static adapter
 - Svelte 5
 - Vite 5
 - TypeScript
 - Tailwind CSS 4 + DaisyUI
-- Vitest for content checks
-- Playwright + Axe for Chromium smoke, responsive, visual and a11y checks
+- Vitest content checks
+- Playwright + Axe smoke, responsive, visual and accessibility tests
 
-## Run
+## Run locally
 
 ```bash
-cd marketing-site
-npm install
+npm ci
 npm run dev
 ```
 
@@ -26,55 +27,26 @@ Verification:
 
 ```bash
 npm run check
-npm run lint
 npm run test
-npm run test:e2e
-npm run test:e2e:a11y
 npm run build
-npm run diagnose
 ```
 
-Playwright notes:
+Additional browser checks are available through the Playwright scripts in `package.json`.
 
-- `npm run test:e2e` starts Vite on `127.0.0.1:4174` and runs Chromium.
-- `npm run test:e2e:a11y` reports WCAG 2 A/AA serious/critical rule IDs without failing
-  the run. Use `npm run test:e2e:a11y:strict` when the page is ready to enforce zero
-  serious/critical violations.
-- `npm run test:e2e:visual` attaches desktop and mobile screenshots for the hero, demo
-  and final beta CTA to the local HTML report in `playwright-report/`.
-- On the current macOS sandbox, Chromium may need to run outside the Codex command sandbox;
-  otherwise Playwright can fail with a MachPort permission error.
+## GitHub Pages
+
+Production builds use the `/growclip` base path. `.github/workflows/pages.yml` builds the static SvelteKit output and deploys the `build/` directory to GitHub Pages.
 
 ## Content
 
-All public copy lives in `src/lib/content/product.ts`.
+The original public product copy is kept in `src/lib/content/product-base.ts`. `src/lib/content/product.ts` is a small public-site adapter that adds the GitHub Pages asset prefix and the public contact address.
 
-- `Locale` is currently `pl | en`.
-- `getProductContent()` falls back to Polish for unsupported locale values.
-- `tests/content.test.ts` verifies PL/EN shape parity, fallback, key differentiator
-  copy and static media slot existence.
-- Contact CTA currently uses `mailto:hello@example.com?subject=GrowClip%20growbox%20setup`.
+The site supports Polish and English and includes the original light/dark theme behavior.
 
-## Media Slots
+## Media
 
-The site ships with a generated hero image, a cropped beta-module reference photo
-and deterministic SVG mockups for product surfaces:
+Public media lives in `static/media/`, including the hero artwork, product concept, web panel, Nodeflow flow, timeline and archive mockups.
 
-- `static/media/growclip-hero.webp` - generated commercial hero background for the first viewport.
-- `static/media/crowpanel-beta-module.jpg` - cropped reference photo of the e-paper HMI module used for the first beta base.
-- `static/media/growclip-device-concept.svg` - product/enclosure concept mockup.
-- `static/media/panel-mockup.svg` - web dashboard/status mockup.
-- `static/media/flow-mockup.svg` - LiteGraph/Nodeflow flow mockup.
-- `static/media/timeline-mockup.svg` - Automation Timeline / microSD decision history mockup.
-- `static/media/automation-archive-mockup.svg` - Automation Archive sensor and decision trend mockup.
-- `static/media/reference/application_of_2.9inch_e-paper_hmi_display.webp` - reference-only e-paper HMI display image. It is retained as source material and is not currently referenced by rendered site content.
+## LiteGraph demo
 
-Keep filenames stable if you only want to replace the visuals. If filenames
-change, update `media[]` in `src/lib/content/product.ts`.
-
-## LiteGraph Demo
-
-The demo is lazy-loaded when the section nears the viewport. It imports only
-`src/lib/features/litegraph/vendor/litegraph.js`, copied from the existing
-interface vendor bundle. It registers marketing-only mock nodes and does not
-connect to ESP32, save flows, call APIs or reuse the full Nodeflow runtime.
+The demo under `src/lib/features/litegraph/` is marketing-only. It does not connect to an ESP32, save device flows, call private APIs or expose the full private Nodeflow runtime.

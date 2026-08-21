@@ -2,7 +2,6 @@ export * from './product-base';
 
 import {
 	getProductContent as getBaseProductContent,
-	type Locale,
 	type ProductContent
 } from './product-base';
 
@@ -18,7 +17,7 @@ function withAssetPrefix(src: string): string {
 	return `${assetPrefix}${src}`;
 }
 
-export function getProductContent(locale: Locale): ProductContent {
+export function getProductContent(locale: string | null | undefined): ProductContent {
 	const content = getBaseProductContent(locale);
 	return {
 		...content,

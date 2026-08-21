@@ -4,10 +4,10 @@
 	import RefreshIcon from '~icons/tabler/refresh';
 
 	import {
-		mountLiteGraphDemo,
-		type DemoExampleId,
-		type LiteGraphDemoController
+		LiteGraphDemoController,
+		type DemoExampleId
 	} from '$lib/features/litegraph/demoRuntime';
+	import { loadLiteGraphClassic } from '$lib/features/litegraph/litegraphLoader';
 	import type { DemoFlowExample } from '$lib/content/product';
 
 	interface Props {
@@ -41,7 +41,9 @@
 		}
 
 		try {
-			controller = await mountLiteGraphDemo(canvasElement, activeExample);
+			await loadLiteGraphClassic();
+			controller = new LiteGraphDemoController(canvasElement, activeExample);
+			controller.reset(activeExample);
 			ready = true;
 			error = '';
 		} catch (initializationError) {

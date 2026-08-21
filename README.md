@@ -1,13 +1,52 @@
-# GrowClip — public showcase
+# GrowClip Marketing Site
 
-Public product and architecture showcase for a larger private ESP32-S3 automation platform.
+Public marketing/demo site for **GrowClip**, a private ESP32-S3 local automation platform.
 
-- **Live site:** https://michalmatu.github.io/growclip/
-- **Main GitHub profile:** https://github.com/MichalMatu
-- **Another live IoT project:** https://michalmatu.github.io/local-climate-link-starter/
+The firmware, device authentication, API implementation and full Nodeflow runtime remain private. This repository contains the standalone public-facing site, marketing-only LiteGraph demo and public mockups.
 
-## What is public here
+**Live site:** https://michalmatu.github.io/growclip/
 
-This repository intentionally contains only a standalone static showcase and public mockups. It does **not** contain the private firmware, device runtime, authentication code, production secrets or the full Nodeflow implementation.
+## Stack
 
-The private project includes an ESP32-S3 automation runtime, sensor/device integrations, local web UI, BLE/Wi-Fi/MQTT connectivity, microSD history/archive and host-side testing. The public page explains those areas at a high level for portfolio and recruiting purposes.
+- SvelteKit 2 + static adapter
+- Svelte 5
+- Vite 5
+- TypeScript
+- Tailwind CSS 4 + DaisyUI
+- Vitest content checks
+- Playwright + Axe smoke, responsive, visual and accessibility tests
+
+## Run locally
+
+```bash
+npm ci
+npm run dev
+```
+
+Verification:
+
+```bash
+npm run check
+npm run test
+npm run build
+```
+
+Additional browser checks are available through the Playwright scripts in `package.json`.
+
+## GitHub Pages
+
+Production builds use the `/growclip` base path. `.github/workflows/pages.yml` builds the static SvelteKit output and deploys the `build/` directory to GitHub Pages.
+
+## Content
+
+The original public product copy is kept in `src/lib/content/product-base.ts`. `src/lib/content/product.ts` is a small public-site adapter that adds the GitHub Pages asset prefix and the public contact address.
+
+The site supports Polish and English and includes the original light/dark theme behavior.
+
+## Media
+
+Public media lives in `static/media/`, including the hero artwork, product concept, web panel, Nodeflow flow, timeline and archive mockups.
+
+## LiteGraph demo
+
+The demo under `src/lib/features/litegraph/` is marketing-only. It does not connect to an ESP32, save device flows, call private APIs or expose the full private Nodeflow runtime.

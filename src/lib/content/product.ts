@@ -19,6 +19,9 @@ function withAssetPrefix(src: string): string {
 
 export function getProductContent(locale: string | null | undefined): ProductContent {
 	const content = getBaseProductContent(locale);
+	if (!assetPrefix) {
+		return content;
+	}
 	return {
 		...content,
 		hero: {

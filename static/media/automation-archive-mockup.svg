@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" role="img" aria-label="GrowClip Automation Archive chart mockup">
+	<rect width="960" height="640" rx="34" fill="#f8fafc" />
+	<rect x="64" y="58" width="832" height="524" rx="28" fill="#ffffff" stroke="#d4d4d8" />
+	<text x="106" y="114" fill="#0f172a" font-family="Inter, system-ui, sans-serif" font-size="30" font-weight="800">Automation Archive</text>
+	<text x="106" y="145" fill="#475569" font-family="Inter, system-ui, sans-serif" font-size="16">Sensor and decision trends feed the same local automation rules.</text>
+	<g font-family="Inter, system-ui, sans-serif">
+		<rect x="106" y="188" width="210" height="86" rx="18" fill="#ecfdf5" />
+		<text x="130" y="222" fill="#047857" font-size="30" font-weight="900">812 ppm</text>
+		<text x="130" y="250" fill="#475569" font-size="14">CO₂ now · falling</text>
+		<rect x="340" y="188" width="210" height="86" rx="18" fill="#eff6ff" />
+		<text x="364" y="222" fill="#0369a1" font-size="30" font-weight="900">24.8°C</text>
+		<text x="364" y="250" fill="#475569" font-size="14">temperature stable</text>
+		<rect x="574" y="188" width="210" height="86" rx="18" fill="#fef3c7" />
+		<text x="598" y="222" fill="#92400e" font-size="30" font-weight="900">62%</text>
+		<text x="598" y="250" fill="#475569" font-size="14">humidity inside target</text>
+	</g>
+	<g transform="translate(106 320)">
+		<rect width="678" height="190" rx="18" fill="#0f172a" />
+		<g stroke="#334155" stroke-width="1">
+			<line x1="44" y1="32" x2="44" y2="154" />
+			<line x1="44" y1="154" x2="632" y2="154" />
+			<line x1="44" y1="112" x2="632" y2="112" />
+			<line x1="44" y1="70" x2="632" y2="70" />
+		</g>
+		<path d="M44 124 C110 118 140 68 198 78 C252 88 286 132 340 118 C402 102 434 56 490 66 C548 76 576 116 632 94" fill="none" stroke="#22c55e" stroke-width="5" stroke-linecap="round" />
+		<path d="M44 82 C112 90 154 104 206 98 C278 90 298 62 358 72 C426 84 454 132 514 124 C558 118 596 98 632 104" fill="none" stroke="#38bdf8" stroke-width="4" stroke-linecap="round" />
+		<path d="M44 142 C110 132 158 128 210 136 C270 146 320 154 380 144 C450 132 506 120 562 132 C594 138 612 146 632 140" fill="none" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" />
+		<g font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700">
+			<text x="470" y="34" fill="#86efac">CO₂</text>
+			<text x="520" y="34" fill="#7dd3fc">temp</text>
+			<text x="584" y="34" fill="#fcd34d">RH</text>
+		</g>
+	</g>
+</svg>

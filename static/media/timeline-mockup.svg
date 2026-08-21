@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" role="img" aria-label="GrowClip automation timeline mockup">
+	<rect width="960" height="640" rx="34" fill="#101820" />
+	<circle cx="820" cy="112" r="146" fill="#22c55e" opacity="0.1" />
+	<text x="76" y="82" fill="#f8fafc" font-family="Inter, system-ui, sans-serif" font-size="30" font-weight="800">Automation Timeline</text>
+	<text x="76" y="116" fill="#a7b0bd" font-family="Inter, system-ui, sans-serif" font-size="16">Every action keeps a local explanation: trigger, rule, condition and health diagnostics.</text>
+	<line x1="118" y1="174" x2="118" y2="548" stroke="#334155" stroke-width="4" stroke-linecap="round" />
+	<g font-family="Inter, system-ui, sans-serif">
+		<circle cx="118" cy="208" r="13" fill="#22c55e" />
+		<rect x="154" y="174" width="650" height="76" rx="18" fill="#f8fafc" />
+		<text x="184" y="207" fill="#0f172a" font-size="17" font-weight="800">Fan switched on</text>
+		<text x="184" y="232" fill="#475569" font-size="14">CO₂ high · outside air useful · hysteresis passed · trace 000004d2</text>
+		<text x="716" y="207" fill="#047857" font-size="14" font-weight="800">20:11</text>
+		<circle cx="118" cy="316" r="13" fill="#f59e0b" />
+		<rect x="154" y="282" width="650" height="76" rx="18" fill="#f8fafc" />
+		<text x="184" y="315" fill="#0f172a" font-size="17" font-weight="800">Humidity action skipped</text>
+		<text x="184" y="340" fill="#475569" font-size="14">Time filter passed · condition gate blocked actuator · no chatter</text>
+		<text x="716" y="315" fill="#92400e" font-size="14" font-weight="800">20:08</text>
+		<circle cx="118" cy="424" r="13" fill="#38bdf8" />
+		<rect x="154" y="390" width="650" height="76" rx="18" fill="#f8fafc" />
+		<text x="184" y="423" fill="#0f172a" font-size="17" font-weight="800">BLE battery alert queued</text>
+		<text x="184" y="448" fill="#475569" font-size="14">Sensor health changed · Telegram worker accepted notification</text>
+		<text x="716" y="423" fill="#0369a1" font-size="14" font-weight="800">20:02</text>
+		<circle cx="118" cy="532" r="13" fill="#94a3b8" />
+		<rect x="154" y="498" width="650" height="76" rx="18" fill="#f8fafc" />
+		<text x="184" y="531" fill="#0f172a" font-size="17" font-weight="800">Flow snapshot stored</text>
+		<text x="184" y="556" fill="#475569" font-size="14">Executable payload and rule telemetry retained for later review</text>
+		<text x="716" y="531" fill="#475569" font-size="14" font-weight="800">19:58</text>
+	</g>
+</svg>

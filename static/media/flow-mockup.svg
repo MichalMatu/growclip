@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" overflow="hidden" role="img" aria-label="GrowClip automation flow mockup">
+	<defs>
+		<linearGradient id="flow-bg" x1="0" x2="1" y1="0" y2="1">
+			<stop stop-color="#17181c" />
+			<stop offset="1" stop-color="#0f172a" />
+		</linearGradient>
+		<filter id="flow-glow" x="-40%" y="-40%" width="180%" height="180%">
+			<feDropShadow dx="0" dy="0" stdDeviation="12" flood-color="#34d399" flood-opacity="0.28" />
+		</filter>
+	</defs>
+	<rect width="960" height="640" rx="34" fill="url(#flow-bg)" />
+	<path d="M82 514 C214 476 296 558 432 518 C598 468 692 496 850 466" fill="none" stroke="#38bdf8" stroke-opacity="0.11" stroke-width="2" />
+	<text x="72" y="74" fill="#f8fafc" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="800">Nodeflow rule: climate guard</text>
+	<text x="72" y="104" fill="#94a3b8" font-family="Inter, system-ui, sans-serif" font-size="16">Inputs, conditions and actions stay readable before they run on the device.</text>
+	<g fill="none" stroke="#34d399" stroke-width="4" stroke-linecap="round" opacity="0.76">
+		<path d="M266 213 C334 213 330 306 402 306" />
+		<path d="M266 408 C334 408 330 334 402 334" />
+		<path d="M562 320 C620 320 628 232 690 232" />
+		<path d="M562 320 C620 320 628 408 690 408" />
+	</g>
+	<g font-family="Inter, system-ui, sans-serif" filter="url(#flow-glow)">
+		<rect x="72" y="158" width="194" height="108" rx="18" fill="#263238" stroke="#475569" />
+		<text x="96" y="196" fill="#e2e8f0" font-size="17" font-weight="800">SCD41</text>
+		<text x="96" y="225" fill="#a7f3d0" font-size="22" font-weight="800">CO₂ 1210 ppm</text>
+		<text x="96" y="248" fill="#94a3b8" font-size="14">temperature · humidity</text>
+		<rect x="72" y="354" width="194" height="108" rx="18" fill="#263238" stroke="#475569" />
+		<text x="96" y="390" fill="#e2e8f0" font-size="17" font-weight="800">BLE outside</text>
+		<text x="96" y="419" fill="#bae6fd" font-size="24" font-weight="800">20.4°C</text>
+		<text x="96" y="442" fill="#94a3b8" font-size="14">air exchange useful</text>
+		<rect x="402" y="250" width="160" height="140" rx="18" fill="#1f2937" stroke="#34d399" />
+		<text x="426" y="287" fill="#e2e8f0" font-size="17" font-weight="800">Condition gate</text>
+		<text x="426" y="323" fill="#86efac" font-size="30" font-weight="900">AND</text>
+		<text x="426" y="350" fill="#cbd5e1" font-size="14">hysteresis +</text>
+		<text x="426" y="370" fill="#cbd5e1" font-size="14">time window</text>
+		<rect x="690" y="178" width="198" height="108" rx="18" fill="#0f766e" stroke="#5eead4" />
+		<text x="714" y="215" fill="#ecfeff" font-size="17" font-weight="800">Shelly fan</text>
+		<text x="714" y="246" fill="#f0fdfa" font-size="24" font-weight="900">ON</text>
+		<text x="714" y="268" fill="#ccfbf1" font-size="14">with power check</text>
+		<rect x="690" y="354" width="198" height="108" rx="18" fill="#334155" stroke="#fbbf24" />
+		<text x="714" y="391" fill="#f8fafc" font-size="17" font-weight="800">Telegram</text>
+		<text x="714" y="422" fill="#fde68a" font-size="24" font-weight="900">queued</text>
+		<text x="714" y="444" fill="#cbd5e1" font-size="14">trace attached</text>
+	</g>
+</svg>
